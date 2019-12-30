@@ -8,4 +8,12 @@ class GamesController < ApplicationController
       render json: GameSerializer.new(game, options)
     end
 
+    def index
+      games = Game.all
+      options = {
+        include: [:player]
+      }
+      render json: GameSerializer.new(games, options)
+    end
+
 end
