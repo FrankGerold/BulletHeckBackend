@@ -17,7 +17,7 @@ class GamesController < ApplicationController
     end
 
     def create
-      game = Game.create(score: params[:score], level: 1, player_id: params[player_id])
+      game = Game.create(score: params[:score], level: 1, player: params[player])
       options = {
         include: [:player]
       }
